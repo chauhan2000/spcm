@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+   webapp:
+     image: rachitchauhan/spcm
+     ports:
+       - "8000:80"
+     restart: always
+
+
