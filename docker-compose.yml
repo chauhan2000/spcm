@@ -1,9 +1,19 @@
 version: '3.3'
+
 services:
+   database:
+     image: mysql:5.7
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_DATABASE: users
+       MYSQL_USER: rachit
+       MYSQL_PASSWORD: 12345
+
    webapp:
-     image: rachitchauhan/spcm
+     depends_on:
+       - database
+     image:  rachitchauhan/test
      ports:
        - "8000:80"
      restart: always
-
-
